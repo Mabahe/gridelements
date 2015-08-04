@@ -448,6 +448,8 @@ class Gridelements extends ContentObjectRenderer {
 				unset($tempSetup['renderObj']);
 				unset($tempSetup['renderObj.']);
 
+				$this->cObj->data['tx_gridelements_rendering_column'] = $column;
+
 				// we render each column into the column key to provide them prerendered for usage  with your own templating
 				$this->cObj->data['tx_gridelements_view_column_' . $column] = count($tempSetup) ? $this->cObj->stdWrap($columnContent, $tempSetup) : $columnContent;
 				$content .= $this->cObj->data['tx_gridelements_view_column_' . $column];
